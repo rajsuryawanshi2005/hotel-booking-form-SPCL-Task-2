@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,41 +8,56 @@
 </head>
 <body>
 
-<div class="container">
+<div class="main-wrapper">
+    <div class="container">
     <h2>Hotel Booking Form</h2>
+
+    <button type="button" id="toggleTheme" class="theme-btn" aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 3v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 19v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.22 4.22l1.42 1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.36 18.36l1.42 1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.22 19.78l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 
     <form id="bookingForm">
 
-        <!-- Check-in Date -->
         <div class="form-group">
             <label for="checkin">Check-in Date</label>
             <input type="date" id="checkin" required>
         </div>
 
-        <!-- Check-out Date -->
         <div class="form-group">
             <label for="checkout">Check-out Date</label>
             <input type="date" id="checkout" required>
         </div>
 
-        <!-- Room Type -->
         <div class="form-group">
             <label for="roomType">Room Type</label>
             <select id="roomType" required>
                 <option value="">Select Room</option>
-                <option value="single">Single</option>
-                <option value="double">Double</option>
-                <option value="suite">Suite</option>
+                <option value="single">Single (₹2000/day)</option>
+                <option value="double">Double (₹3500/day)</option>
+                <option value="suite">Suite (₹5000/day)</option>
             </select>
         </div>
 
-        <!-- Guest Count -->
         <div class="form-group">
             <label for="guests">Number of Guests</label>
-            <input type="number" id="guests" min="1" max="10" required>
+            <input type="number" id="guests" min="1" required>
         </div>
 
-        <!-- Special Requests -->
+        <div class="form-group">
+            <label>Total Price</label>
+            <input type="text" id="totalPrice" readonly>
+        </div>
+
         <div class="form-group">
             <label for="requests">Special Requests (Optional)</label>
             <textarea id="requests" rows="3"></textarea>
@@ -54,6 +68,10 @@
         <p id="message"></p>
 
     </form>
+    </div>
+    <div class="image-panel">
+        <div class="image-text">Hotel Royal Prestige</div>
+    </div>
 </div>
 
 <script src="script.js"></script>

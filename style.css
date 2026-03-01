@@ -6,24 +6,82 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: 0.3s;
+}
+
+/* layout wrapper for side-by-side form and photo */
+.main-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+    align-items: stretch;
 }
 
 .container {
-    background: white;
+    position: relative;
+    /* use a subtle white overlay over the photo so form controls remain readable */
+    background: linear-gradient(rgba(255,255,255,0.88), rgba(228, 171, 171, 0.88)), url('royal hotel.jpg') center/cover no-repeat;
     padding: 30px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 450px;
+    border-radius: 12px;
+    width: 450px;
+    max-width: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    align-self: center;
+    z-index: 2;
+}
+
+.image-panel {
+    position: relative;
+    flex: 1 1 auto;
+    height: 100vh;
+    background: url('h2.jpg') no-repeat center center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image-text {
+    position: absolute;
+    font-size: xx-large;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.theme-btn svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+.theme-btn:hover {
+    transform: scale(1.05);
 }
 
 .form-group {
@@ -46,10 +104,12 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
     background: #5a67d8;
+    transform: scale(1.05);
 }
 
 #message {
@@ -58,9 +118,38 @@ button:hover {
     font-weight: bold;
 }
 
+/* Dark Mode */
+.dark-mode {
+    background: #1a1a1a;
+}
+
+.dark-mode .container {
+    background: #2c2c2c;
+    color: white;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+    background: #444;
+    color: white;
+    border: 1px solid #777;
+}
+
 /* Responsive */
 @media (max-width: 500px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+
     .container {
         padding: 20px;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .image-panel {
+        width: 100%;
+        height: 200px;
     }
 }
