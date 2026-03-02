@@ -8,69 +8,58 @@
 </head>
 <body>
 
-<div class="main-wrapper">
-    <div class="container">
-    <h2>Hotel Booking Form</h2>
+<div class="container">
+    <div class="booking-card">
+        <h2>Hotel Booking Form</h2>
 
-    <button type="button" id="toggleTheme" class="theme-btn" aria-label="Toggle theme">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 3v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 19v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4.22 4.22l1.42 1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18.36 18.36l1.42 1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M1 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4.22 19.78l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
+        <form id="bookingForm">
 
-    <form id="bookingForm">
+            <div class="form-group">
+                <label for="checkin">Check-in Date</label>
+                <input type="date" id="checkin" required>
+                <small class="error"></small>
+            </div>
 
-        <div class="form-group">
-            <label for="checkin">Check-in Date</label>
-            <input type="date" id="checkin" required>
-        </div>
+            <div class="form-group">
+                <label for="checkout">Check-out Date</label>
+                <input type="date" id="checkout" required>
+                <small class="error"></small>
+            </div>
 
-        <div class="form-group">
-            <label for="checkout">Check-out Date</label>
-            <input type="date" id="checkout" required>
-        </div>
+            <div class="form-group">
+                <label for="room">Room Type</label>
+                <select id="room" required>
+                    <option value="" data-price="0">Select Room</option>
+                    <option value="Single" data-price="2000">Single (₹2000/night)</option>
+                    <option value="Double" data-price="3500">Double (₹3500/night)</option>
+                    <option value="Suite" data-price="5000">Suite (₹5000/night)</option>
+                </select>
+                <small id="priceInfo" class="price-info"></small>
+                <small class="error"></small>
+            </div>
 
-        <div class="form-group">
-            <label for="roomType">Room Type</label>
-            <select id="roomType" required>
-                <option value="">Select Room</option>
-                <option value="single">Single (₹2000/day)</option>
-                <option value="double">Double (₹3500/day)</option>
-                <option value="suite">Suite (₹5000/day)</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" min="1" max="10" required>
+                <small class="error"></small>
+            </div>
 
-        <div class="form-group">
-            <label for="guests">Number of Guests</label>
-            <input type="number" id="guests" min="1" required>
-        </div>
+            <div class="form-group">
+                <label for="requests">Special Requests (Optional)</label>
+                <textarea id="requests" rows="3"></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>Total Price</label>
-            <input type="text" id="totalPrice" readonly>
-        </div>
+            <div class="summary">
+                <p>Total Nights: <span id="nights">0</span></p>
+                <p>Price per night: ₹<span id="price">0</span></p>
+                <p>Total Price: ₹<span id="totalPrice">0</span></p>
+            </div>
 
-        <div class="form-group">
-            <label for="requests">Special Requests (Optional)</label>
-            <textarea id="requests" rows="3"></textarea>
-        </div>
+            <button type="submit">Book Now</button>
 
-        <button type="submit">Book Now</button>
+            <div class="success-message" id="successMsg"></div>
 
-        <p id="message"></p>
-
-    </form>
-    </div>
-    <div class="image-panel">
-        <div class="image-text">Hotel Royal Prestige</div>
+        </form>
     </div>
 </div>
 
