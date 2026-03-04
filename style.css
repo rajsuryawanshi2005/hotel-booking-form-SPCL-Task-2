@@ -6,7 +6,12 @@
 }
 
 body {
-    background:url(h2.jpg);
+    /* background image centered and covering viewport */
+    background-image: url("royal hotel.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     display: flex;
     justify-content: center;
     align-items: center;
