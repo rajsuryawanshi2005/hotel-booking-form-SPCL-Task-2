@@ -25,10 +25,12 @@ body {
 }
 
 .booking-card {
-    background: #fff;
+    /* gradient background with transparency for a modern look */
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(238,238,238,0.8) 100%);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    color: #333; /* ensure text is readable */
 }
 
 .booking-card h2 {
@@ -64,7 +66,8 @@ input:focus, select:focus, textarea:focus {
 button {
     width: 100%;
     padding: 12px;
-    background: #4e73df;
+    /* golden color */
+    background: #D4AF37;
     color: white;
     border: none;
     border-radius: 6px;
@@ -74,7 +77,8 @@ button {
 }
 
 button:hover {
-    background: #2e59d9;
+    /* slightly darker gold for hover */
+    background: #c49e2e;
 }
 
 .error {
